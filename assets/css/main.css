@@ -5049,6 +5049,44 @@ a img {
     margin-right: 5px
 }
 
+#experience {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 960px;
+    margin: 0 auto
+}
+
+@media only screen and (min-width:550px) {
+    #experience {
+        width: 80%
+    }
+}
+
+.user-experience {
+    margin: 20px auto
+}
+
+    .user-experience img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px
+    }
+
+    .user-experience h5 {
+        margin: 0
+    }
+
+    .user-experience li {
+        color: #1488CC;
+        font-size: 1.1rem
+    }
+
+    .user-experience p {
+        margin-right: 5px
+    }
+
 @media only screen and (min-width:550px) {
     .contents {
         margin-left: 0;

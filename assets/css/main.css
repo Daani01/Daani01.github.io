@@ -4888,6 +4888,7 @@ a img {
     margin: 10px
 }
 
+
 .header-links .link {
     color: #fff;
     text-decoration: none;
@@ -4898,6 +4899,27 @@ a img {
 @media only screen and (min-width:550px) {
     .header-links .link {
         font-size: 20px
+    }
+}
+
+.header-links-languague {
+    margin: 100px;
+    margin-top: -100px;
+    font-size: 30px;
+
+}
+
+
+    .header-links-languague .link {
+        color: #fff;
+        text-decoration: none;
+        font-size: 15px;
+        margin: 10px
+    }
+
+@media only screen and (min-width:550px) {
+    .header-links-languague .link {
+        font-size: 28px
     }
 }
 

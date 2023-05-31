@@ -5005,20 +5005,21 @@ a img {
 }
 
 .tech {
-    margin: 10px
+    margin: 0px;
+
 }
 
 .user {
     text-align: center;
     font-size: 60px;
-    display: flex;
+    display: flow;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
 .user p {
-    font-size: 16px
+    font-size: 18px
 }
 
 @media only screen and (min-width:550px) {

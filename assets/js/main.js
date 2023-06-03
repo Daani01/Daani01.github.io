@@ -1,1 +1,97 @@
-document.addEventListener("DOMContentLoaded",function(){new SweetScroll({}),particlesJS("particles-js",{particles:{number:{value:30,density:{enable:!0,value_area:800}},color:{value:"#ffffff"},shape:{type:"polygon",stroke:{width:0,color:"#000000"},polygon:{nb_sides:5},image:{src:"img/github.svg",width:100,height:100}},opacity:{value:.5,random:!1,anim:{enable:!1,speed:1,opacity_min:.1,sync:!1}},size:{value:3,random:!0,anim:{enable:!1,speed:19.18081918081918,size_min:.1,sync:!1}},line_linked:{enable:!0,distance:150,color:"#ffffff",opacity:.4,width:1},move:{enable:!0,speed:4,direction:"none",random:!0,straight:!1,out_mode:"out",bounce:!1,attract:{enable:!1,rotateX:600,rotateY:1200}},nb:80},interactivity:{detect_on:"canvas",events:{onhover:{enable:!1,mode:"grab"},onclick:{enable:!0,mode:"push"},resize:!0},modes:{grab:{distance:400,line_linked:{opacity:1}},bubble:{distance:400,size:40,duration:2,opacity:8,speed:3},repulse:{distance:200,duration:.4},push:{particles_nb:4},remove:{particles_nb:2}}},retina_detect:!0})},!1);
+const navMenu = document.getElementById("nav-menu"),
+  navToggle = document.getElementById("nav-toggle"),
+  navItem = document.querySelectorAll(".nav__item"),
+  header = document.getElementById("header");
+
+// open and close menu
+navToggle.addEventListener("click", () => {
+  navMenu.classList.toggle("nav__menu--open");
+  changeIcon();
+});
+
+// close the menu when the user clicks the nav links
+navItem.forEach((item) => {
+  item.addEventListener("click", () => {
+    if (navMenu.classList.contains("nav__menu--open")) {
+      navMenu.classList.remove("nav__menu--open");
+    }
+    changeIcon();
+  });
+});
+
+// Change nav toggle icon
+function changeIcon() {
+  if (navMenu.classList.contains("nav__menu--open")) {
+    navToggle.classList.replace("ri-menu-3-line", "ri-close-line");
+  } else {
+    navToggle.classList.replace("ri-close-line", "ri-menu-3-line");
+  }
+}
+
+// Downloading Resume
+// document.getElementsByClassName("btn btn--primary").addEventListener("click", function() {
+//   window.location.href = "../../assets/Calvin Mwangi.pdf"
+// })
+
+
+// Testimonial Slide
+
+const testimonialSlide = new Swiper(".testimonial__wrapper", {
+  loop: true,
+  spaceBetween: 30,
+  centeredSlides: true,
+  effect: "coverflow",
+  grabCursor: true,
+  slidesPerView: 1,
+  coverflowEffect: {
+    rotate: 50,
+    stretch: 0,
+    depth: 100,
+    modifier: 1,
+    slideShadows: true,
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+
+  breakpoints: {
+    520: {
+      slidesPerView: "auto",
+    },
+  },
+});
+
+// header scroll animation
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 40) {
+    header.classList.add("header--scroll");
+  } else {
+    header.classList.remove("header--scroll");
+  }
+});
+
+// ScrollReveal animations
+const sr = ScrollReveal({
+  duration: 2000,
+  distance: "100px",
+  delay: 400,
+  reset: false,
+});
+
+sr.reveal(".hero__content, .about__content");
+sr.reveal(".hero__img", { origin: "top" });
+
+sr.reveal(
+  ".hero__info-wrapper, .skills__title, .skills__content, .qualification__name, .qualification__item, .service__card, .project__content, .testimonial__wrapper, .footer__content",
+  {
+    delay: 500,
+    interval: 100,
+  }
+);
+
+sr.reveal(".qualification__footer-text, .contact__content", {
+  origin: "left",
+});
+
+sr.reveal(".qualification__footer .btn, .contact__btn", { origin: "right" });
